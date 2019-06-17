@@ -1,6 +1,6 @@
 ## On the complex number multiplication using one less submultiplication
 
-$Math test$
+<strong>htmltest</strong>
 Given two complex numbers $$A=a+bi$$ and $$B=c+di$$, the product of the two is $$R=AB=(ac-bd) + (ad+bc)i$$.
 Even when this approach is straightforward, it requires four submultiplications ($$ac$$, $$bd$$, $$ad$$, $$bc$$) to achieve the result. It is known that multiplications are, to some extent, more expensive than sums. So, in order to reduce algorithm's time complexity, we could increase the amount of sums we make with the terms ($$a$$, $$b$$, $$c$$, $$d$$) if that does represent a decrease in the amount of submultiplications.
 
