@@ -1,17 +1,17 @@
 ## On the complex number multiplication using one less submultiplication
 
-<strong>htmltest</strong>
-Given two complex numbers $$A=a+bi$$ and $$B=c+di$$, the product of the two is $$R=AB=(ac-bd) + (ad+bc)i$$.
-Even when this approach is straightforward, it requires four submultiplications ($$ac$$, $$bd$$, $$ad$$, $$bc$$) to achieve the result. It is known that multiplications are, to some extent, more expensive than sums. So, in order to reduce algorithm's time complexity, we could increase the amount of sums we make with the terms ($$a$$, $$b$$, $$c$$, $$d$$) if that does represent a decrease in the amount of submultiplications.
+
+Given two complex numbers <img src="http://www.sciweavers.org/upload/Tex2Img_1560864949/render.png"> and <img src="http://www.sciweavers.org/upload/Tex2Img_1560864999/render.png">, the product of the two is <img src="http://www.sciweavers.org/upload/Tex2Img_1560865024/render.png">.
+Even when this approach is straightforward, it requires four submultiplications (<img src="http://www.sciweavers.org/upload/Tex2Img_1560865051/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865071/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865146/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865323/render.png">) to achieve the result. It is known that multiplications are, to some extent, more expensive than sums. So, in order to reduce algorithm's time complexity, we could increase the amount of sums we make with the terms (<img src="http://www.sciweavers.org/upload/Tex2Img_1560865343/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865355/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865365/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865376/render.png">) if that does represent a decrease in the amount of submultiplications.
 
 Let's define the sums: 
-$$S_1 = d-c$$
-$$S_2 = a+b$$
-$$S_3=d+c$$
+<img src="http://www.sciweavers.org/upload/Tex2Img_1560865392/render.png">
+<img src="http://www.sciweavers.org/upload/Tex2Img_1560865410/render.png">
+<img src="http://www.sciweavers.org/upload/Tex2Img_1560865418/render.png">
 And the submultiplications:
-$$P_1=aS_1$$
-$$P_2=cS_2$$
-$$P_3=bS_3$$
+<img src="http://www.sciweavers.org/upload/Tex2Img_1560865429/render.png">
+<img src="http://www.sciweavers.org/upload/Tex2Img_1560865442/render.png">
+<img src="http://www.sciweavers.org/upload/Tex2Img_1560865452/render.png">
 
-We then calculate $$P_1+P_2=ad-ac+ac+bc=ad+bc=Im\{R\}$$ and $$P_2-P_3=ac+bc-bd-bc=ac-bd=Re\{R\}$$.
-So $$R=(P_2-P_3)+(P_1+P_2)i$$, and we taxed our CPU with only three submultiplications.
+We then calculate <img src="http://www.sciweavers.org/upload/Tex2Img_1560865464/render.png"> and <img src="http://www.sciweavers.org/upload/Tex2Img_1560865477/render.png">.
+So <img src="http://www.sciweavers.org/upload/Tex2Img_1560865487/render.png">, and we taxed our CPU with only three submultiplications.
