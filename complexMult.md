@@ -1,17 +1,17 @@
 ## On the complex number multiplication using one less submultiplication
 
 
-Given two complex numbers <img src="http://www.sciweavers.org/upload/Tex2Img_1560864949/render.png"> and <img src="http://www.sciweavers.org/upload/Tex2Img_1560864999/render.png">, the product of the two is <img src="http://www.sciweavers.org/upload/Tex2Img_1560865024/render.png">.
-Even when this approach is straightforward, it requires four submultiplications (<img src="http://www.sciweavers.org/upload/Tex2Img_1560865051/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865071/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865146/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865323/render.png">) to achieve the result. It is known that multiplications are, to some extent, more expensive than sums. So, in order to reduce algorithm's time complexity, we could increase the amount of sums we make with the terms (<img src="http://www.sciweavers.org/upload/Tex2Img_1560865343/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865355/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865365/render.png">, <img src="http://www.sciweavers.org/upload/Tex2Img_1560865376/render.png">) if that does represent a decrease in the amount of submultiplications.
+Given two complex numbers <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24a%2Bbi%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g"> and <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24c%2Bdi%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0">, the product of the two is <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24%28ac-bd%29%20%2B%20%28ad%2Bbc%29i%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0">.
+Even when this approach is straightforward, it requires four submultiplications (<img src="http://www.sciweavers.org/tex2img.php?eq=%24%24ac%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24ad%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24bc%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24bd%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">) to achieve the result. It is known that multiplications are, to some extent, more expensive than sums. So, in order to reduce algorithm's time complexity, we could increase the amount of sums we make with the terms (<img src="http://www.sciweavers.org/tex2img.php?eq=%24%24a%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24b%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24c%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24d%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">) if that does represent a decrease in the amount of submultiplications.
 
 Let's define the sums: 
-<div><img src="http://www.sciweavers.org/upload/Tex2Img_1560865392/render.png"></div>
-<div><img src="http://www.sciweavers.org/upload/Tex2Img_1560865410/render.png"></div>
-<div><img src="http://www.sciweavers.org/upload/Tex2Img_1560865418/render.png"></div>
+<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24S_1%3Dd-c%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
+<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24S_2%3Da%2Bb%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
+<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24S_3%3Dd%2Bc%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
 And the submultiplications:
-<div><img src="http://www.sciweavers.org/upload/Tex2Img_1560865429/render.png"></div>
-<div><img src="http://www.sciweavers.org/upload/Tex2Img_1560865442/render.png"></div>
-<div><img src="http://www.sciweavers.org/upload/Tex2Img_1560865452/render.png"></div>
+<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_1%3DaS_1%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
+<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_2%3DcS_2%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
+<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_3%3DbS_3%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
 
-We then calculate <img src="http://www.sciweavers.org/upload/Tex2Img_1560865464/render.png"> and <img src="http://www.sciweavers.org/upload/Tex2Img_1560865477/render.png">.
-So <img src="http://www.sciweavers.org/upload/Tex2Img_1560865487/render.png">, and we taxed our CPU with only three submultiplications.
+We then calculate <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_1%2BP_2%3Dad-ac%2Bac%2Bbc%3Dad%2Bbc%3DIm%5C%7BR%5C%7D%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"> and <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_2-P_3%3Dac%2Bbc-bd-bc%3Dac-bd%3DRe%5C%7BR%5C%7D%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0">.
+So <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24R%3D%28P_2-P_3%29%2B%28P_1%2BP_2%29i%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0">, and we taxed our CPU with only three submultiplications.
