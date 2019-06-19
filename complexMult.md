@@ -1,17 +1,17 @@
 ## On the complex number multiplication using one less submultiplication
 
 
-Given two complex numbers <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24a%2Bbi%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g"> and <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24c%2Bdi%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0">, the product of the two is <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24%28ac-bd%29%20%2B%20%28ad%2Bbc%29i%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0">.
-Even when this approach is straightforward, it requires four submultiplications (<img src="http://www.sciweavers.org/tex2img.php?eq=%24%24ac%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24ad%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24bc%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24bd%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">) to achieve the result. It is known that multiplications are, to some extent, more expensive than sums. So, in order to reduce algorithm's time complexity, we could increase the amount of sums we make with the terms (<img src="http://www.sciweavers.org/tex2img.php?eq=%24%24a%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24b%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24c%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">, <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24d%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0g">) if that does represent a decrease in the amount of submultiplications.
+Given two complex numbers <i>a + b<strong>i</strong></i> and <i>c + d<strong>i</strong></i>, the product of the two is <i>(ac - bd) + (ad + bc)<strong>i</strong></i>.
+Even when this approach is straightforward, it requires four submultiplications (<i>ac</i>, <i>ad</i>, <i>bc</i>, <i>bd</i>) to achieve the result. It is known that multiplications are, to some extent, more expensive than sums. So, in order to reduce algorithm's time complexity, we could increase the amount of sums we make with the terms (<i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>) if that does represent a decrease in the amount of submultiplications.
 
 Let's define the sums: 
-<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24S_1%3Dd-c%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
-<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24S_2%3Da%2Bb%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
-<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24S_3%3Dd%2Bc%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
+<div><i>S<sub>1</sub> = d - c</i></div>
+<div><i>S<sub>2</sub> = a + b</i></div>
+<div><i>S<sub>3</sub> = d + c</i></div>
 And the submultiplications:
-<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_1%3DaS_1%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
-<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_2%3DcS_2%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
-<div><img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_3%3DbS_3%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"></div>
+<div><i>P<sub>1</sub> = aS<sub>1</sub></i></div>
+<div><i>P<sub>2</sub> = cS<sub>2</sub></i></div>
+<div><i>P<sub>3</sub> = bS<sub>3</sub></i></div>
 
-We then calculate <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_1%2BP_2%3Dad-ac%2Bac%2Bbc%3Dad%2Bbc%3DIm%5C%7BR%5C%7D%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0"> and <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24P_2-P_3%3Dac%2Bbc-bd-bc%3Dac-bd%3DRe%5C%7BR%5C%7D%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0">.
-So <img src="http://www.sciweavers.org/tex2img.php?eq=%24%24R%3D%28P_2-P_3%29%2B%28P_1%2BP_2%29i%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0">, and we taxed our CPU with only three submultiplications.
+We then calculate <i>P<sub>1</sub> + P<sub>2</sub> = ad - ac + ac + bc = ad + bc = Im{R}</i> and <i>P<sub>2</sub> - P<sub>3</sub> = ac + bc - bd - bc = ac - bd = Re{R}</i>.
+So <i>R = (P<sub>2</sub> - P<sub>3</sub>) + (P<sub>1</sub> + P<sub>2</sub>)<strong>i</strong></i>, and we taxed our CPU with only three submultiplications.
